@@ -28,7 +28,7 @@
     <!-- javascript -->
     <script type="text/javascript" src="index.js"></script>
     <script>
-      getImages()
+      getImages('#images')
     </script>
 
 
@@ -45,6 +45,11 @@
         <cite>&mdash;Robert Wagner</cite>
       </blockquote>
     </header>
+
+    <!-- Full size selected image viewer -->
+    <div id="imageViewer" class="hide" onclick="closeImage()">
+        <img id="selectedImage" width="400" />
+    </div>
 
     <!-- Main Content -->
     <main class="container">
