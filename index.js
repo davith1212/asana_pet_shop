@@ -3,7 +3,11 @@ function getImages(target) {
   axios.get("./assets/data/dogs.json").then(res => {
     res.data.dogs.map((item, index) => {
       renderImage(target, item, index)
-    });
+    })
+  }).then(() => {
+    setTimeout(() => {
+        hideSpinner()
+    }, 4500)
   });
 }
 
@@ -34,4 +38,9 @@ function viewImage(url) {
 function closeImage() {
   document.getElementById("imageViewer").classList.remove("show");
   document.getElementById("imageViewer").classList.add("hide");
+}
+
+// Hides loading spinner
+function hideSpinner() {
+  loadingDiv.style.visibility = 'hidden';
 }
