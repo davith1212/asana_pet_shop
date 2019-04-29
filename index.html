@@ -8,16 +8,64 @@
       content="Best Supreme Local Puppy Dog, Kitten Cat, and Cute Pet Shop!"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Asana and Pets</title>
+
+    <!-- stylesheets -->
     <link rel="stylesheet" href="./assets/styles/site.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/loader.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Muli"
       rel="stylesheet"
     />
-    <title>Asana and Pets</title>
+
+    <!-- dependencies -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- javascript -->
+    <script type="text/javascript" src="index.js"></script>
+    <script>
+      getImages("#images");
+    </script>
   </head>
   <body>
+    <!-- Loading spinner markup -->
+    <div id="loading" class="loading">
+      <div class="logo-wrapper">
+        <div class="dot-wrapper">
+          <div id="dot-one" class="dot"></div>
+          <div id="dot-two" class="dot"></div>
+          <div id="dot-three" class="dot"></div>
+        </div>
+        <div id="logo">
+          <span id="firstLetter" class="animate-letter">a</span><span id="secondLetter" class="animate-letter">s</span
+          ><span id="thirdLetter" class="animate-letter">a</span><span id="fourthLetter" class="animate-letter">n</span
+          ><span id="fifthLetter" class="animate-letter">a</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Initiates Loading spinner after markup load -->
+    <script>
+      var loadingDiv = document.getElementById("loading");
+
+      function showSpinner() {
+        loadingDiv.style.visibility = "visible";
+      }
+      showSpinner();
+    </script>
+    <!-- Brand -->
+    <div class="brand-wrapper fade-in">
+        <img src="https://luna1.co/0fc2ef.png" width="100" />
+    </div>
+
     <!-- Header -->
-    <header class="site-header">
+    <header class="site-header fade-in">
       <h1>Puppy image gallery</h1>
       <blockquote class="site-header__quote">
         <p>
@@ -28,9 +76,18 @@
       </blockquote>
     </header>
 
+    <!-- Full size selected image viewer -->
+    <div id="imageViewer" class="hide" onclick="closeImage()">
+      <img id="selectedImage" />
+    </div>
+
+    <!-- Main Content -->
+    <main class="container fade-in">
+      <ul id="images"></ul>
+    </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer fade-in">
       <p>Built by a wonderful developer for Asana.</p>
     </footer>
   </body>
